@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# Plataforma Universitaria — Frontend (UTLM)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prototipo web navegable para la **Universidad Tecnológica La Mejor (UTLM)**. Centraliza portales académicos, administrativos, financieros y ejecutivos con **datos simulados en el cliente** (sin backend real).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Tecnología | Uso |
+|------------|-----|
+| React 19 | Interfaz |
+| TypeScript | Tipado estricto |
+| Vite 8 | Build y dev server |
+| Tailwind CSS 4 | Estilos |
+| React Router 7 | Rutas y guards |
+| Recharts | Gráficas en dashboards ejecutivos |
 
-## React Compiler
+## Requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 20+
+- npm
 
-## Expanding the ESLint configuration
+## Comandos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd frontend
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # Compilación de producción
+npm run lint     # ESLint
+npm run preview  # Vista previa del build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usuarios demo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Contraseña para todos: **`demo123`**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Correo | Rol | Módulo principal |
+|--------|-----|------------------|
+| estudiante@utlm.demo | Estudiante | Perfil, matrícula, calificaciones, cuenta |
+| docente@utlm.demo | Docente | Cursos, asistencia, calificaciones |
+| admin@utlm.demo | Administrativo | Estudiantes, docentes, cursos, períodos |
+| finanzas@utlm.demo | Financiero | Pagos de matrícula, cursos, historial, estado |
+| ejecutivo@utlm.demo | Ejecutivo académico | Dashboard académico institucional |
+| proyecto@utlm.demo | Director de proyecto | Dashboard ejecutivo del proyecto |
+
+## Qué probar por rol
+
+- **Estudiante:** matricular/retirar cursos, ver horario, calificaciones, estado de cuenta.
+- **Docente:** registrar asistencia y notas (persisten en localStorage).
+- **Administrativo:** CRUD simulado de entidades (alcance limitado; ver limitaciones).
+- **Financiero:** marcar pagos, generar comprobantes simulados.
+- **Ejecutivo:** indicadores académicos y financieros con gráficas.
+- **Director de proyecto:** KPIs, riesgos, solicitudes de cambio del proyecto UTLM.
+
+## Persistencia local (localStorage)
+
+| Clave | Contenido |
+|-------|-----------|
+| `utlm_session` | Sesión demo (sin contraseña) |
+| `utlm_student_enrollments` | Overrides de matrícula |
+| `utlm_teacher_attendance` | Overrides de asistencia |
+| `utlm_teacher_grades` | Overrides de calificaciones |
+| `utlm_admin_students` | Overrides administrativos — estudiantes |
+| `utlm_admin_teachers` | Overrides administrativos — docentes |
+| `utlm_admin_courses` | Overrides administrativos — cursos |
+| `utlm_admin_periods` | Overrides administrativos — períodos |
+| `utlm_finance_payments` | Overrides de pagos y comprobantes |
+
+Las claves están centralizadas en `src/utils/storageKeys.ts`.
+
+## Restablecer datos demo
+
+En cualquier pantalla autenticada, use el botón **Datos demo** en el encabezado:
+
+1. Confirme en el modal.
+2. Opcionalmente mantenga o cierre la sesión.
+3. Se eliminan overrides del prototipo; los mocks base no cambian.
+
+Útil antes de una exposición en vivo.
+
+## Integraciones entre portales
+
+| Acción | Se refleja en |
+|--------|----------------|
+| Docente edita nota | Calificaciones del estudiante, dashboard estudiante |
+| Finanzas marca pago | Estado de cuenta estudiante, dashboard financiero/ejecutivo |
+| Estudiante matricula/retira curso | Horario y resumen del estudiante |
+
+## Limitaciones conocidas
+
+- **Sin backend** ni base de datos real.
+- **Sin pasarela de pago** ni datos de tarjeta.
+- Persistencia solo en el navegador actual.
+- El CRUD administrativo **no sincroniza globalmente** cursos nuevos con matrícula, horarios del docente ni cupos en otros portales (avisos en UI).
+- El dashboard docente muestra conteos base de asistencia/notas pendientes desde mocks (no recalcula overrides).
+- Build puede advertir chunk >500 kB por Recharts (no bloqueante).
+
+## Estructura
+
 ```
+src/
+├── app/           # Router
+├── components/    # UI, layout, demo
+├── features/      # Módulos por dominio
+├── data/          # Mocks y selectors
+├── hooks/         # useLocalStorage, etc.
+├── types/         # Modelos TypeScript
+└── utils/         # Rutas, permisos, formatters, storageKeys
+```
+
+## Guía de demostración
+
+Ver [DEMO_GUIDE.md](./DEMO_GUIDE.md) para un guion paso a paso.

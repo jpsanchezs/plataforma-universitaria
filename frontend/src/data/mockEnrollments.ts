@@ -1,0 +1,30 @@
+import type { Enrollment } from '@/types/academic'
+import { CURRENT_PERIOD_ID } from '@/data/mockPeriods'
+
+export const mockEnrollments: Enrollment[] = [
+  { id: 'enr-001', studentId: 'std-001', courseId: 'crs-001', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-15' },
+  { id: 'enr-002', studentId: 'std-001', courseId: 'crs-002', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-15' },
+  { id: 'enr-003', studentId: 'std-001', courseId: 'crs-004', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-16' },
+  { id: 'enr-004', studentId: 'std-001', courseId: 'crs-008', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-16' },
+  { id: 'enr-005', studentId: 'std-002', courseId: 'crs-003', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-14' },
+  { id: 'enr-006', studentId: 'std-002', courseId: 'crs-005', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-14' },
+  { id: 'enr-007', studentId: 'std-002', courseId: 'crs-009', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-15' },
+  { id: 'enr-008', studentId: 'std-002', courseId: 'crs-006', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-17' },
+  { id: 'enr-009', studentId: 'std-003', courseId: 'crs-005', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-13' },
+  { id: 'enr-010', studentId: 'std-003', courseId: 'crs-010', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-13' },
+  { id: 'enr-011', studentId: 'std-004', courseId: 'crs-001', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-18' },
+  { id: 'enr-012', studentId: 'std-004', courseId: 'crs-002', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-18' },
+  { id: 'enr-013', studentId: 'std-004', courseId: 'crs-004', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-19' },
+  { id: 'enr-014', studentId: 'std-004', courseId: 'crs-008', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-19' },
+  { id: 'enr-015', studentId: 'std-005', courseId: 'crs-006', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-12' },
+  { id: 'enr-016', studentId: 'std-005', courseId: 'crs-012', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-12' },
+  { id: 'enr-017', studentId: 'std-006', courseId: 'crs-001', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-20' },
+  { id: 'enr-018', studentId: 'std-006', courseId: 'crs-007', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-20' },
+  { id: 'enr-019', studentId: 'std-006', courseId: 'crs-009', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-21' },
+  { id: 'enr-020', studentId: 'std-007', courseId: 'crs-006', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-11' },
+  { id: 'enr-021', studentId: 'std-007', courseId: 'crs-012', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-11' },
+  { id: 'enr-022', studentId: 'std-007', courseId: 'crs-003', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-12' },
+  { id: 'enr-023', studentId: 'std-008', courseId: 'crs-009', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-10' },
+  { id: 'enr-024', studentId: 'std-008', courseId: 'crs-010', periodId: CURRENT_PERIOD_ID, status: 'matriculado', enrolledAt: '2026-01-10' },
+  { id: 'enr-025', studentId: 'std-009', courseId: 'crs-005', periodId: CURRENT_PERIOD_ID, status: 'retirado', enrolledAt: '2026-01-08' },
+]

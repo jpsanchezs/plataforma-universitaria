@@ -1,0 +1,30 @@
+import type { Payment } from '@/types/finance'
+import { CURRENT_PERIOD_ID } from '@/data/mockPeriods'
+
+export const mockPayments: Payment[] = [
+  { id: 'pay-001', studentId: 'std-001', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'pendiente', dueDate: '2026-02-15', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-002', studentId: 'std-001', concept: 'curso', description: 'Programación Web', amount: 45000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-01', paidDate: '2026-01-28', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-003', studentId: 'std-002', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-01', paidDate: '2026-01-30', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-004', studentId: 'std-002', concept: 'curso', description: 'Contabilidad General', amount: 38000, currency: 'CRC', status: 'pendiente', dueDate: '2026-02-20', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-005', studentId: 'std-003', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-01', paidDate: '2026-01-25', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-006', studentId: 'std-003', concept: 'curso', description: 'Finanzas Corporativas', amount: 42000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-10', paidDate: '2026-02-08', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-007', studentId: 'std-004', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'vencido', dueDate: '2026-01-31', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-008', studentId: 'std-004', concept: 'curso', description: 'Bases de Datos', amount: 48000, currency: 'CRC', status: 'pendiente', dueDate: '2026-02-25', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-009', studentId: 'std-005', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-01', paidDate: '2026-01-29', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-010', studentId: 'std-006', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'vencido', dueDate: '2026-01-28', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-011', studentId: 'std-006', concept: 'multa', description: 'Multa por pago tardío', amount: 15000, currency: 'CRC', status: 'pendiente', dueDate: '2026-02-28', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-012', studentId: 'std-007', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-01', paidDate: '2026-01-27', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-013', studentId: 'std-008', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-01', paidDate: '2026-02-01', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-014', studentId: 'std-008', concept: 'curso', description: 'Gestión de Proyectos', amount: 40000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-05', paidDate: '2026-02-04', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-015', studentId: 'std-009', concept: 'matricula', description: 'Matrícula 2026-I', amount: 185000, currency: 'CRC', status: 'vencido', dueDate: '2026-01-20', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-016', studentId: 'std-001', concept: 'curso', description: 'Cálculo I', amount: 52000, currency: 'CRC', status: 'pendiente', dueDate: '2026-03-01', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-017', studentId: 'std-002', concept: 'curso', description: 'Comunicación Organizacional', amount: 28000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-05', paidDate: '2026-02-03', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-018', studentId: 'std-004', concept: 'curso', description: 'Programación Web', amount: 45000, currency: 'CRC', status: 'pendiente', dueDate: '2026-03-05', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-019', studentId: 'std-005', concept: 'curso', description: 'Redacción Profesional', amount: 25000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-08', paidDate: '2026-02-07', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-020', studentId: 'std-006', concept: 'curso', description: 'Cálculo II', amount: 52000, currency: 'CRC', status: 'vencido', dueDate: '2026-02-01', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-021', studentId: 'std-007', concept: 'curso', description: 'Introducción a la Administración', amount: 35000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-12', paidDate: '2026-02-10', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-022', studentId: 'std-003', concept: 'otro', description: 'Certificación internacional', amount: 75000, currency: 'CRC', status: 'pagado', dueDate: '2026-01-15', paidDate: '2026-01-14', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-023', studentId: 'std-001', concept: 'curso', description: 'Bases de Datos', amount: 48000, currency: 'CRC', status: 'pagado', dueDate: '2026-02-10', paidDate: '2026-02-09', periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-024', studentId: 'std-008', concept: 'curso', description: 'Finanzas Corporativas', amount: 42000, currency: 'CRC', status: 'pendiente', dueDate: '2026-03-10', paidDate: null, periodId: CURRENT_PERIOD_ID },
+  { id: 'pay-025', studentId: 'std-002', concept: 'otro', description: 'Material académico', amount: 18000, currency: 'CRC', status: 'pendiente', dueDate: '2026-02-28', paidDate: null, periodId: CURRENT_PERIOD_ID },
+]

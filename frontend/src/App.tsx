@@ -1,7 +1,10 @@
-function App() {
-  return (
-    <h1>Hola, Mundo. </h1>
-  );
-}
+import { AppProviders } from '@/app/providers'
+import { AppRouter } from '@/app/router'
 
-export default App;
+export default function App() {
+  return (
+    <AppProviders>
+      <AppRouter />
+    </AppProviders>
+  )
+}
