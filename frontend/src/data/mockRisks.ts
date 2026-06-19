@@ -19,5 +19,5 @@ export const mockRisks: Risk[] = [
 
 export const mockChangeRequests: ChangeRequest[] = [
   { id: 'cr-001', title: 'Incorporacion de cuarto integrante al equipo', description: 'Ajuste de roles, horas y presupuesto de mano de obra tras pasar de 3 a 4 integrantes.', status: 'en_revision', requestedBy: 'Daniel Palacios', createdAt: '2026-06-17', priority: 'amarillo' },
-  { id: 'cr-002', title: 'Por definir en reunion de equipo', description: 'Segunda solicitud de cambio pendiente de definicion por el Integrante 1.', status: 'abierta', requestedBy: 'Daniel Palacios', createdAt: '2026-06-17', priority: 'verde' },
+  { id: 'cr-002', title: 'Adelanto de demo a autoridades al 21 de agosto', description: 'Se adelanta la presentacion funcional del 28 al 21 de agosto. Condicion: diferir el Portal Docente y priorizar los nueve modulos minimos.', status: 'aprobada', requestedBy: 'Alicia Salazar Hernandez', createdAt: '2026-08-14', priority: 'amarillo' },
 ]
